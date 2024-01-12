@@ -1,4 +1,23 @@
 @media screen and (max-width: 1024px) {
+    .header__navigation {
+        position: fixed;
+        inset: 90px 0 0;
+        flex-direction: column;
+        padding: 15px;
+        background-color: #363A4D;
+        .btn {
+            justify-content: center;
+        }
+    }
+
+    .header__navigation-list {
+        flex-direction: column;
+        margin-bottom: 48px;
+    }
+    .header__navigation-item-link {
+        font-size: 24px;
+        line-height: 222%;
+    }
 }
 
 
