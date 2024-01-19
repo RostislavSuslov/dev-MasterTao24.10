@@ -8,10 +8,10 @@
         height: 700px;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         display: flex;
         align-items: center;
-        padding-bottom: 68px;
-        border-radius: 20px;
+        padding: 0 92px 68px;
     }
 
     &-title {

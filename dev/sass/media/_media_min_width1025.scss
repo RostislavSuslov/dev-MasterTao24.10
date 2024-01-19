@@ -5,5 +5,11 @@
     .header__navigation {
         display: flex;
     }
+
+    .banner {
+        .slick-slide {
+            border-radius: 20px;
+        }
+    }
 }
 
