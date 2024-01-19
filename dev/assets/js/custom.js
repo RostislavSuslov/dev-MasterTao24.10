@@ -1,9 +1,29 @@
-const burger = document.querySelector('.btn-burger');
-const navigation = document.querySelector('.header__navigation');
+$(document).ready(function(){
+    $('#banner').slick({
+        // setting-name: setting-value
+        arrows: true,
+        dots: true,
+        fade: true,
+        appendArrows: $('.banner-arrows'),
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                arrows: false,
+              }
+            },
+          ]
+    });
 
-const toggleMenu =()=> {    
-    burger.classList.toggle('open');
-    navigation.classList.toggle('show');
-}
+    const burger = document.querySelector('.btn-burger');
+    const navigation = document.querySelector('.header__navigation');
 
-burger.addEventListener('click', toggleMenu);
+    const toggleMenu =()=> {    
+        burger.classList.toggle('open');
+        navigation.classList.toggle('show');
+    }
+
+    burger.addEventListener('click', toggleMenu);
+
+});
+
