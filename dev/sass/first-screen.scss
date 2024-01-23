@@ -1,5 +1,6 @@
 
 .first-screen {
+    @extend .charter;
     position: relative;
 }
 
@@ -31,7 +32,10 @@
     }
 
     .slick-dots {
-        margin: -51px 0 0;
+        position: absolute;
+        bottom: 51px;
+        transform: translate(-50px, 0);
+        left: 50%;
     }
 }
 

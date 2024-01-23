@@ -428,20 +428,12 @@ ul.slick-dots {
 // .slider-template__img-box img {
 //     border-radius: 20px;
 // }
-
-
-section {
+.charter {
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: $section-margin-lg;
     max-width: 1920px;
-    
- 
-
-    &:last-of-type {
-        margin-bottom: 56px;
-    }
 
     &.container-fluid {
         padding: 90px 85px 100px;
@@ -470,9 +462,10 @@ section {
 
 .template-title {
     text-align: center;
-    position: relative;
     padding-bottom: 18px;
     margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
 
     h2 {
         line-height: 124.5%;
@@ -498,36 +491,35 @@ section {
     }
 
     
-
-    /*type 3*/
+    /*type 2*/
     &.col-lg-7 {
         margin-bottom: 35px;
+        text-align: left;
+
         h2 {
             &:after {
                 content: "";
-                position: static;
-                display: inline-block;
                 width: 85px;
                 height: 2px;
-                margin: 10px 10px 10px 19px;
                 background-color: $color-secondary;
+                display: inline-block;
+                margin: 10px;
+            }
+        }
+
+        &.template-title {
+            &:after {
+                display: none;
             }
         }
     }
 }
 
-
-
-.input-column {
-    width: 100%;
-}
+ 
+ 
 
 .input-box {
-    margin-bottom: 19px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
+    
     label {
         font-weight: 600;
         font-size: 15px;
@@ -564,13 +556,4 @@ section {
 }
 
 
-/*for-form*/
-.padding {
-    padding-top: 21px; /*для .input-column */
-}
-
-.has-checkbox {
-    margin-bottom: 8px;  /*для input-box*/
-}
-  
-
+ 
