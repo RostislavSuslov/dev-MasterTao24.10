@@ -1,4 +1,5 @@
 $(document).ready(function(){
+ 
   $('#banner').slick({
       // setting-name: setting-value
       arrows: true,
@@ -14,6 +15,51 @@ $(document).ready(function(){
           },
         ]
   });
+  
+ 
+  function showAlert() {
+    alert("Max " + 18)
+  }
+  showAlert()
+   
+  
+  // const showAlert2 = (name, age)=> {
+  //   alert(name, age)
+  // }
+  
+  // showAlert2("Bill " + 12)
+
+
+
+
+  mobileOnlySlider("#slider-advantages", true, false, 1024);
+
+  function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+    
+    var slider = $($slidername);
+    var settings = {
+      mobileFirst: true,
+      dots: $dots,
+      arrows: $arrows,
+      responsive: [
+        {
+          breakpoint: $breakpoint,
+          settings: "unslick"
+        }
+      ]
+    };
+  
+    slider.slick(settings);
+  
+    $(window).on("resize", function () {
+      if ($(window).width() > $breakpoint) {
+        return;
+      }
+      if (!slider.hasClass("slick-initialized")) {
+        return slider.slick(settings);
+      }
+    });
+  } // Mobile Only Slider
 
   const burger = document.querySelector('.btn-burger');
   const navigation = document.querySelector('.header__navigation');
@@ -33,6 +79,7 @@ $(document).ready(function(){
   }
 
 
+
   const file = document.querySelectorAll('.input-file')
 
   if(file.length > 0) {
@@ -42,8 +89,12 @@ $(document).ready(function(){
   }
 
 
+function addClassCharter() {
+    const section = document.querySelectorAll('section')
+    section.forEach(item => item.classList.add('charter'))
+}
 
-
+document.querySelector('.home-page') ? addClassCharter() : null;
 
 
 
@@ -71,4 +122,6 @@ $(document).ready(function(){
   }
 
 });
+
+
 
