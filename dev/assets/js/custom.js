@@ -1,5 +1,15 @@
 $(document).ready(function(){
- 
+  const burger = document.querySelector('.btn-burger');
+  const navigation = document.querySelector('.header__navigation');
+
+  const toggleMenu =()=> {
+      burger.classList.toggle('open');
+      navigation.classList.toggle('show');
+  }
+
+  burger.addEventListener('click', toggleMenu);
+
+
   $('#banner').slick({
       // setting-name: setting-value
       arrows: true,
@@ -15,27 +25,26 @@ $(document).ready(function(){
           },
         ]
   });
-  
- 
-  function showAlert() {
-    alert("Max " + 18)
+
+  /*form calculation*/
+  const checkboxes = document.querySelectorAll('[type="checkbox"]')
+  if(checkboxes.length > 0) {
+    checkboxes.forEach(checkbox => {
+      checkbox.closest('.input-column').classList.add('column-checkbox')
+    })
   }
-  showAlert()
-   
-  
-  // const showAlert2 = (name, age)=> {
-  //   alert(name, age)
-  // }
-  
-  // showAlert2("Bill " + 12)
+
+  const file = document.querySelectorAll('.input-file')
+  if(file.length > 0) {
+    file.forEach(item => {
+      item.closest('.input-column').style.paddingTop = '6px'
+    })
+  }
 
 
-
-
+  /*slider advantages(mobile only)*/
   mobileOnlySlider("#slider-advantages", true, false, 1024);
-
   function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
-    
     var slider = $($slidername);
     var settings = {
       mobileFirst: true,
@@ -59,57 +68,43 @@ $(document).ready(function(){
         return slider.slick(settings);
       }
     });
-  } // Mobile Only Slider
+  } 
 
-  const burger = document.querySelector('.btn-burger');
-  const navigation = document.querySelector('.header__navigation');
+  /*slider-template*/
+  $('.slider-template').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true,
+        }
+      },
+    ]
+  });
 
-  const toggleMenu =()=> {
-      burger.classList.toggle('open');
-      navigation.classList.toggle('show');
+  function addClassCharter() {
+      const section = document.querySelectorAll('section')
+      section.forEach(item => item.classList.add('charter'))
   }
 
-  burger.addEventListener('click', toggleMenu);
-
-  const checkboxes = document.querySelectorAll('[type="checkbox"]')
-  if(checkboxes.length > 0) {
-    checkboxes.forEach(checkbox => {
-      checkbox.closest('.input-column').classList.add('column-checkbox')
-    })
-  }
-
-
-
-  const file = document.querySelectorAll('.input-file')
-
-  if(file.length > 0) {
-    file.forEach(item => {
-      item.closest('.input-column').style.paddingTop = '6px'
-    })
-  }
-
-
-function addClassCharter() {
-    const section = document.querySelectorAll('section')
-    section.forEach(item => item.classList.add('charter'))
-}
-
-document.querySelector('.home-page') ? addClassCharter() : null;
-
-
-
-
-
-
-
-
-
-
-  
-  // const arr = [1, 2, 3, 4]
-  // const x = arr.length;
-  // console.log(x);
-  
+  document.querySelector('.home-page') ? addClassCharter() : null;
 
   const arrayBurgers = document.querySelectorAll('.hamburger')
   
