@@ -8,7 +8,7 @@
         padding-left: $container-mobile-padding;
         padding-right: $container-mobile-padding;
     }
-    
+
 
     .header {
         padding: 17px 0 15px;
@@ -60,6 +60,7 @@
         .slick-slide {
             padding: 0 40px;
             height: calc(100vh - 72px);
+
             &:before {
                 content: "";
                 position: absolute;
@@ -70,12 +71,14 @@
                 height: 100%;
                 background: #00000099;
             }
+
             .container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                padding: 0;z-index: 1;
+                padding: 0;
+                z-index: 1;
             }
         }
 
@@ -106,9 +109,7 @@
         display: none;
     }
 
-    .advantages {
-        @include default-bg-mobile;
-    }
+
 
     .advantage-description {
         margin-bottom: 48px;
@@ -117,8 +118,15 @@
     .slider-template {
         width: 390px;
         margin: 0 auto;
+
         .slick-slide {
-          margin: 0 15px;
-      }
+            margin: 0 15px;
+        }
+    }
+
+    .advantages,
+    .services,
+    .test {
+        @include default-bg-mobile;
     }
 }
